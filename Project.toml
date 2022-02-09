@@ -1,0 +1,13 @@
+name = "LogDensity"
+uuid = "43a98068-d3ec-47a8-8f69-6a851f589296"
+authors = ["Joris Pinkse <pinkse@gmail.com> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1.7"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
