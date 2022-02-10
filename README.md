@@ -5,3 +5,5 @@
 [![Build Status](https://github.com/NittanyLion/LogDensity/workflows/CI/badge.svg)](https://github.com/NittanyLion/LogDensity/actions)
 
 This package computes estimates of the log density function and its derivatives using the algorithm proposed in Pinkse and Schurter (Econometric Theory, 2022).
+
+The code is reasonably fast and single-threaded, so it can be used inside an @threads for loop without additional overhead.
