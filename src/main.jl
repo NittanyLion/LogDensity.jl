@@ -139,8 +139,15 @@ T is a floating point type
 - `minx::T=0.0`: the left hand side of the support
 - `maxx::T=Inf`: the right hand side of the support
 - `logf::Bool=true`: whether the log density itself should be computed
-- `mz::Function=epanechnikov`: the kernel to be used for the log density itself
+- `mz::Function=LogDensity.epanechnikov`: the kernel to be used for the log density itself
 - `anal::Bool=true`: whether to run many sanity checks
+
+Other choices for the kernel are: 
+LogDensity.quartic
+LogDensity.gaussian
+LogDensity.triweight
+LogDensity.uniform
+LogDensity.cosinus
 """
 function logdensity(
     X::Vector{Tp},                    # data
