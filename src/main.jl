@@ -116,7 +116,7 @@ end
 
 
 """
-    β = logdensity( X, x, h; various optional arguments )
+    (logf, β) = logdensity( X, x, h; various optional arguments )
 
     Computes estimates of the log density and its derivatives of the data 
     in the vector X evaluated at the elements in the vector x, using the 
