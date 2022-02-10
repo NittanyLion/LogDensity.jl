@@ -54,29 +54,30 @@ function common( X, x, S, h, minx, maxx, anal )
     return ( β, Xh, xh, z, zr, S )
 end
 
+"""
+    β = logdensityderivatives( X, x, h; various optional arguments )
 
-function logdensityderivatives(
-    X::Vector{Tp},                    # data
-    x::Tp,                            # evaluation points
-    h::Tp;                            # bandwidth
-    g = g,                            # g-function in paper
-    dg = dg,                          # its derivative                                        
-    S = 1,                            # degree 
-    minx = 0.0,                       # bottom of support
-    maxx = Inf,                       # top of support
-    anal = true                       # whether to be fussy about checking arguments
-    ) where {Tp<:Real}
+    Computes estimates of the derivatives of the log density of the data 
+    in the vector X evaluated at the elements in the vector x, using the 
+    bandwidth h. Returns a matrix β with rows corresponding to the 
+    evaluation points and columns to the derivatives.  This is a matrix
+    even if S = 1.
 
-    ( β, Xh, xh, z, zr, S ) = common( X, x, S, h, minx, maxx, anal )
-    if S == 1
-        derivatives1!( β, Xh, xh, h, z, zr, g, dg )
-    else
-        derivativesmulti!( β, S, Xh, xh, h, z, zr, g, dg )
-    end
-    return β
-end
+# Mandatory arguments
+- `X::Vector{T}`: vector of data 
+- `x::Vector{T}`: vector of evaluation points
+- `h::T`: bandwidth
 
+T is the floating point type
 
+# Optional arguments
+- `g::Function=g`: the function g to be used (see Pinkse and Schurter)
+- `dg::Function=dg`: its derivative
+- `S::Int=1`: the number of derivatives to be computed
+- `minx::T=0.0`: the left hand side of the support
+- `maxx::T=Inf`: the right hand side of the support
+- `anal::Bool=true`: whether to run many sanity checks
+"""
 function logdensityderivatives(
     X::Vector{Tp},                    # data
     x::Vector{Tp},                    # evaluation points
@@ -114,6 +115,33 @@ function denfunc(x, a, b )
 end
 
 
+"""
+    β = logdensity( X, x, h; various optional arguments )
+
+    Computes estimates of the log density and its derivatives of the data 
+    in the vector X evaluated at the elements in the vector x, using the 
+    bandwidth h. Returns a tuple ( logf, β ) where logf is a vector whose
+    elements correspond to the evaluation points and β a matrix with rows 
+    corresponding to the evaluation points and columns to the derivatives;  
+    this is a matrix even if S = 1.
+
+# Mandatory arguments
+- `X::Vector{T}`: vector of data 
+- `x::Vector{T}`: vector of evaluation points
+- `h::T`: bandwidth
+
+T is the floating point type
+
+# Optional arguments
+- `g::Function=g`: the function g to be used (see Pinkse and Schurter)
+- `dg::Function=dg`: its derivative
+- `S::Int=1`: the number of derivatives to be computed
+- `minx::T=0.0`: the left hand side of the support
+- `maxx::T=Inf`: the right hand side of the support
+- `logf::Bool=true`: whether the log density itself should be computed
+- `mz::Function=epanechnikov`: the kernel to be used for the log density itself
+- `anal::Bool=true`: whether to run many sanity checks
+"""
 function logdensity(
     X::Vector{Tp},                    # data
     x::Vector{Tp},                    # evaluation points
