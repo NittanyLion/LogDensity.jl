@@ -18,7 +18,7 @@ using Test
     ( logf, β ) = logdensity(r, collect(0.0:0.1:0.2), 0.5; S=3, mz=LogDensity.quartic,anal=false )
     @test β ≈ [-1.572088272730215 15.39013993699334 -71.87012956581209; -0.18776905560267698 -2.786004255503017 14.675398492375955; -0.28141402629073176 -0.10470410790118856 -4.789506265957136]
     @test logf ≈ [-0.7185403492935303, -0.7818410094136379, -0.8190838536404783]
-    β2 = logdensityderivatives(r, collect(0.0:0.1:0.2), 0.5; S=3, mz=LogDensity.quartic, anal=false )
+    β2 = logdensityderivatives(r, collect(0.0:0.1:0.2), 0.5; S=3, anal=false )
     @test β ≈ β2
 
 end
