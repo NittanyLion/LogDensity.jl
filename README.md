@@ -10,3 +10,6 @@ One of several advantages of estimating the logarithm of a density is that it is
 
 The code is reasonably fast and single-threaded, so it can be used inside an @threads for loop without additional overhead.
 
+To use this package, just add LogDensity using the package manager (e.g. typing the ] character in the REPL and then typing *add LogDensity*). 
+
+The package provides two functions: logdensity and logdensityderivatives. In the REPL type ? followed by (e.g.) logdensity to see the documentation of the command.
