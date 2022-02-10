@@ -3,6 +3,7 @@ module LogDensity
 using QuadGK, SpecialFunctions, LinearAlgebra
 
 export logdensityderivatives, logdensity
+# export epanechnikov, gaussian, triweight, uniform, cosinus, quartic
 
 include( "util.jl" )
 include( "sanity.jl" )
