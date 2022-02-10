@@ -8,13 +8,13 @@ export logdensityderivatives, logdensity
 
 function __init__()
     println("\n\n")
-    printstyled( " Thank you for using the LogDensity package\n"; bold = true, color=:green )
+    printstyled( " Thank you for using the LogDensity package\n"; bold = true, color=:red )
     println( "This package implements the Pinkse-Schurter (Econometric Theory)")
-    println( "estimator, which estimates the log density and its derivative,")
+    println( "estimator, which estimates the log density and its derivatives,")
     println( "including at the boundaries.")
     println( "See https://github.com/NittanyLion/LogDensity for documentation")
     println( "In the REPL, you can also type ?logdensity and ?logdensityderivatives")
-    println("\n: please direct all questions/suggestions/comments to Joris Pinkse at joris@psu.edu\n\n")
+    println("\nPlease direct all questions/suggestions/comments to Joris Pinkse at joris@psu.edu\n\n")
 end
 
 include( "util.jl" )
