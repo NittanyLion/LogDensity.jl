@@ -68,7 +68,7 @@ end
 - `x::Vector{T}`: vector of evaluation points
 - `h::T`: bandwidth
 
-T is the floating point type
+T is a floating point type
 
 # Optional arguments
 - `g::Function=g`: the function g to be used (see Pinkse and Schurter)
@@ -130,7 +130,7 @@ end
 - `x::Vector{T}`: vector of evaluation points
 - `h::T`: bandwidth
 
-T is the floating point type
+T is a floating point type
 
 # Optional arguments
 - `g::Function=g`: the function g to be used (see Pinkse and Schurter)
