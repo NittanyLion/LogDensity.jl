@@ -19,6 +19,7 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/NittanyLion/LogDensity.jl"#,
+    repo = "github.com/NittanyLion/LogDensity.jl.git",
+    target = "build"
     # devbranch="main",
 )
