@@ -3,6 +3,11 @@ uuid = "43a98068-d3ec-47a8-8f69-6a851f589296"
 authors = ["Joris Pinkse <pinkse@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+QuadGK = "1fd47b50-473d-5c70-9696-f719f8f3bcdc"
+SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
+
 [compat]
 julia = "1.7"
 
