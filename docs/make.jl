@@ -10,7 +10,7 @@ makedocs(;
     sitename="LogDensity.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://NittanyLion.github.io/LogDensity.jl/",
+        canonical="https://NittanyLion.github.io/LogDensity.jl",
         assets=String[],
     ),
     pages=[
@@ -19,6 +19,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/NittanyLion/LogDensity.jl",
-    devbranch="main",
+    repo="github.com/NittanyLion/LogDensity.jl"#,
+    # devbranch="main",
 )
