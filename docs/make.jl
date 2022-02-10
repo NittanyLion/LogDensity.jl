@@ -1,18 +1,23 @@
 using LogDensity
 using Documenter
 
-DocMeta.setdocmeta!(LogDensity, :DocTestSetup, :(using LogDensity); recursive=true)
+# DocMeta.setdocmeta!(LogDensity, :DocTestSetup, :(using LogDensity); recursive=true)
 
+
+format = Documenter.HTML(edit_link = "master",
+                         prettyurls = get(ENV, "CI", nothing) == "true",
+                         assets = String[],
+)
 makedocs(;
     modules=[LogDensity],
     authors="Joris Pinkse <joris@psu.edu> and Karl Schurter",
     repo="https://github.com/NittanyLion/LogDensity.jl/blob/{commit}{path}#{line}",
     sitename="LogDensity.jl",
-    format=Documenter.HTML(;
-        prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://NittanyLion.github.io/LogDensity.jl",
-        assets=String[],
-    ),
+    # format=Documenter.HTML(;
+    #     prettyurls=get(ENV, "CI", "false") == "true",
+    #     canonical="https://NittanyLion.github.io/LogDensity.jl",
+    #     assets=String[],
+    # ),
     pages=[
         "Home" => "index.md",
     ],
