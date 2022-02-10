@@ -5,7 +5,7 @@ DocMeta.setdocmeta!(LogDensity, :DocTestSetup, :(using LogDensity); recursive=tr
 
 makedocs(;
     modules=[LogDensity],
-    authors="Joris Pinkse <pinkse@gmail.com> and contributors",
+    authors="Joris Pinkse <joris@psu.edu> and Karl Schurter",
     repo="https://github.com/NittanyLion/LogDensity.jl/blob/{commit}{path}#{line}",
     sitename="LogDensity.jl",
     format=Documenter.HTML(;
